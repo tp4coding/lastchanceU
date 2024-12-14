@@ -1,15 +1,15 @@
 const fs = require("fs");
 const path = require("path");
 
-// Path to the database file
+// database path
 const DB_FILE = path.join(__dirname, "data.json");
 
 const fsdb = {
-  // Read all records from the database file
+  // Read database records
   readAll: async () => {
     try {
       if (!fs.existsSync(DB_FILE)) {
-        return []; // Return an empty array if file doesn't exist
+        return []; 
       }
       const data = await fs.promises.readFile(DB_FILE, "utf-8");
       return JSON.parse(data);
@@ -19,7 +19,6 @@ const fsdb = {
     }
   },
 
-  // Write a new record to the database file
   write: async (record) => {
     try {
       const data = await fsdb.readAll();
@@ -32,7 +31,7 @@ const fsdb = {
     }
   },
 
-  // Delete a record by its unique ticket number
+// deleting method
   delete: async (ticketNumber) => {
     try {
       const data = await fsdb.readAll();
@@ -40,15 +39,12 @@ const fsdb = {
         (record) => record.ticketNumber === ticketNumber
       );
       if (server === -1) {
-        return false; // Record not found
+        return false; 
       }
-      data.splice(server, 1); // Remove the record
+      data.splice(server, 1); // remove record if its found
       await fs.promises.writeFile(DB_FILE, JSON.stringify(data, null, 2));
       return true;
-    } catch (error) {
-      console.error("Error deleting record from database file:", error);
-      return false;
-    }
+    } 
   },
 };
 
