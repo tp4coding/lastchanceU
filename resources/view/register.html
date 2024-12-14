@@ -1,22 +1,19 @@
 <!DOCTYPE html>
 <html lang="en">
   <head>
-    <title>View Registrations</title>
+    <a href="/UI/registration/view">View Registrations</a>
+
+    <title>Register</title>
     <script src="/js/registration.js" defer></script>
   </head>
   <body>
-    <h1>Registration Status</h1>
-    <input type="text" id="searchName" placeholder="Search by Name" />
-    <button id="searchByName">Search by Name</button>
-    <br />
-    <input type="text" id="searchEvent" placeholder="Search by Event" />
-    <button id="searchByEvent">Search by Event</button>
-    <br />
-    <button id="viewAll">View All</button>
-    <br />
-    <input type="text" id="ticketNumber" placeholder="Ticket Number to Cancel" />
-    <button id="cancelRegistration">Delet Ticket</button>
-    <br />
-    <div id="results"></div>
+    <form id="registerForm">
+      <label>Name: <input type="text" id="name" required /></label><br />
+      <label>Email: <input type="email" id="email" required /></label><br />
+      <label>Date: <input type="date" id="date" required /></label><br />
+      <label>Event Name: <input type="text" id="eventName" required /></label
+      ><br />
+      <button type="submit">Register</button>
+    </form>
   </body>
 </html>
