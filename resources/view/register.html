@@ -1,18 +1,24 @@
 <!DOCTYPE html>
 <html lang="en">
   <head>
-    <a href="/UI/registration/view">View Registrations</a>
-
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Register</title>
+
+    <link rel="stylesheet" href="/resources/bootstrap.css" />
+    <link rel="stylesheet" href="/resources/font-awesome.min.css" />
+    <link rel="stylesheet" href="/resources/responsive.css" />
+    <link rel="stylesheet" href="/resources/style.css" />
+
     <script src="/js/registration.js" defer></script>
   </head>
   <body>
+    <a href="/UI/registration/view">View Registrations</a>
     <form id="registerForm">
-      <label>Name: <input type="text" id="name" required /></label><br />
-      <label>Email: <input type="email" id="email" required /></label><br />
-      <label>Date: <input type="date" id="date" required /></label><br />
-      <label>Event Name: <input type="text" id="eventName" required /></label
-      ><br />
+      <label for="name">Name: <input type="text" id="name" required /></label><br />
+      <label for="email">Email: <input type="email" id="email" required /></label><br />
+      <label for="date">Date: <input type="date" id="date" required /></label><br />
+      <label for="eventName">Event Name: <input type="text" id="eventName" required /></label><br />
       <button type="submit">Register</button>
     </form>
   </body>
